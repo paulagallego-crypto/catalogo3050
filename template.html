@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo GOcuotas — Elegí qué comprar con tu límite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>html{scroll-behavior:smooth;}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__row">
+    <!-- TODO: swap for real <img> logo once Paula shares brand assets -->
+    <a href="#top" class="site-header__logo">GOcuotas</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <h1>Productos que podés comprar con tu límite</h1>
+    <p>Ingresá al producto que quieras comprar y a la hora de pagar, elegí como medio de pago GOcuotas</p>
+    <button type="button" class="info-toggle-btn" aria-expanded="false" aria-controls="limite-info-box">
+      <span aria-hidden="true">&#9432;</span> Más info sobre tu límite
+    </button>
+    <div class="info-box" id="limite-info-box">
+      <p>Recordá que podés comprar hasta el doble de tu límite disponible. La diferencia la abonas en la primer cuota. <a href="https://ayuda.gocuotas.com/es/articles/11844342-como-funciona-la-primera-cuota-variable" target="_blank" rel="noopener">Más info</a></p>
+    </div>
+  </div>
+</section>
+
+<nav class="category-nav container" aria-label="Categorías">
+{{CATEGORY_NAV}}
+</nav>
+
+<main>
+{{CATEGORY_SECTIONS}}
+</main>
+
+<div class="container all-stores-cta">
+  <a class="all-stores-btn" href="https://www.gocuotas.com/locales?utm_source=landing&amp;utm_medium=btn&amp;utm_campaign=catalogo-30-50k" target="_blank" rel="noopener">Conocé todos los locales adheridos</a>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>GOcuotas — Los precios y productos son referenciales y pueden variar en el sitio de cada local.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
