@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const priceRange = document.getElementById('price-range');
   const priceRangeValue = document.getElementById('price-range-value');
   const productCards = document.querySelectorAll('.product-card[data-price]');
+  const categorySections = document.querySelectorAll('.category-section');
+  const categoryNavBtns = document.querySelectorAll('.category-nav__btn');
 
   function fmtPrice(n) {
     return '$' + Number(n).toLocaleString('es-AR');
@@ -47,6 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
     productCards.forEach((card) => {
       const price = Number(card.dataset.price);
       card.style.display = price <= max ? '' : 'none';
+    });
+
+    categorySections.forEach((section) => {
+      const hasVisible = Array.from(section.querySelectorAll('.product-card')).some((c) => c.style.display !== 'none');
+      section.style.display = hasVisible ? '' : 'none';
+      const navBtn = document.querySelector(`.category-nav__btn[href="#${section.id}"]`);
+      if (navBtn) navBtn.style.display = hasVisible ? '' : 'none';
     });
 
     if (priceRange) {
