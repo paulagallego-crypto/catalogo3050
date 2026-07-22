@@ -32,4 +32,31 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.textContent = isOpen ? 'Ver menos' : 'Ver otros productos';
     });
   });
+
+  const priceRange = document.getElementById('price-range');
+  const priceRangeValue = document.getElementById('price-range-value');
+  const productCards = document.querySelectorAll('.product-card[data-price]');
+
+  function fmtPrice(n) {
+    return '$' + Number(n).toLocaleString('es-AR');
+  }
+
+  function applyPriceFilter() {
+    const max = Number(priceRange.value);
+    priceRangeValue.textContent = fmtPrice(max);
+    productCards.forEach((card) => {
+      const price = Number(card.dataset.price);
+      card.style.display = price <= max ? '' : 'none';
+    });
+
+    if (priceRange) {
+      const min = Number(priceRange.min);
+      const total = Number(priceRange.max) - min;
+      const percent = total > 0 ? ((max - min) / total) * 100 : 100;
+      priceRange.style.background = `linear-gradient(to right, var(--color-primary) ${percent}%, var(--color-card-bg) ${percent}%)`;
+    }
+  }
+
+  priceRange?.addEventListener('input', applyPriceFilter);
+  applyPriceFilter();
 });
