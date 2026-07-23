@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-54QM8K5P');</script>
-<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catálogo GOcuotas — Elegí qué comprar con tu límite</title>
+<title>Locales adheridos GOcuotas — Mirá todos los locales donde podés comprar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>html{scroll-behavior:smooth;}</style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54QM8K5P"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <header class="site-header">
   <div class="container site-header__row">
-    <!-- TODO: swap for real <img> logo once Paula shares brand assets -->
-    <a href="#top" class="site-header__logo">GOcuotas</a>
+    <a href="#top" class="site-header__logo">
+      <img src="favicon.svg" alt="GOcuotas">
+      <span>GOcuotas</span>
+    </a>
   </div>
 </header>
 
 <section class="hero" id="top">
   <div class="container">
-    <h1>Productos que podés comprar con tu límite</h1>
-    <p>Ingresá al producto que quieras comprar y a la hora de pagar, elegí como medio de pago GOcuotas</p>
+    <h1>Mirá todos los locales donde podés comprar</h1>
+    <p>Ingresá en el local que quieras comprar, seleccioná tu producto favorito y a la hora de pagar, elegí como medio de pago GOcuotas</p>
     <button type="button" class="info-toggle-btn" aria-expanded="false" aria-controls="limite-info-box">
       <span aria-hidden="true">&#9432;</span> Más info sobre tu límite
     </button>
@@ -44,30 +35,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<nav class="category-nav container" aria-label="Categorías">
-{{CATEGORY_NAV}}
+<nav class="mode-tabs container" aria-label="Tipo de local">
+  <button type="button" class="mode-tabs__btn is-active" data-mode="online">Online</button>
+  <button type="button" class="mode-tabs__btn" data-mode="fisica">Tienda física</button>
 </nav>
 
-<section class="price-filter container">
-  <label for="price-range" class="price-filter__label">Mostrando productos hasta <span id="price-range-value">$50.000</span></label>
-  <input type="range" id="price-range" class="price-filter__slider" min="10000" max="50000" step="1000" value="50000">
-  <div class="price-filter__scale">
-    <span>$10.000</span>
-    <span>$50.000</span>
-  </div>
-</section>
+<div class="province-select-wrap container" id="province-select-wrap">
+  <select class="province-select" id="province-select">
+{{PROVINCE_OPTIONS}}
+  </select>
+</div>
 
 <main>
-{{CATEGORY_SECTIONS}}
+{{LOCALE_GRIDS}}
 </main>
-
-<div class="container all-stores-cta">
-  <a class="all-stores-btn" href="https://www.gocuotas.com/locales?utm_source=landing&amp;utm_medium=btn&amp;utm_campaign=catalogo-30-50k" target="_blank" rel="noopener">Conocé todos los locales adheridos</a>
-</div>
 
 <footer class="site-footer">
   <div class="container">
-    <p>GOcuotas — Los precios y productos son referenciales y pueden variar en el sitio de cada local.</p>
+    <p>GOcuotas — Los locales y su disponibilidad pueden variar. Elegí GOcuotas como medio de pago en cada local adherido.</p>
   </div>
 </footer>
 
